@@ -4,23 +4,52 @@
   <title>Fancy Form</title>
 
   <!-- You may add more stuff here -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js"></script>
   <link href="style.css" rel="stylesheet" />
 </head>
 
-<body>
-
+<body class="bg-gradient-to-br from-blue-500 to-green-500">
+  <div class="flex justify-center mt-10">
+    <form id="swap" class="mt-10" onsubmit="return !1">
+      <div class="text-center">
+        <h5 class="text-white text-4xl font-bold p-4">Swap</h5>
+      </div>
+      <div class="bg-slate-300/20 px-4 py-8 rounded-lg space-y-4"> 
+        <div>
+          <label for="input-amount" class="text-white font-semibold text-left text-lg mx-4">You are sending...</label>
+        </div>  
+        <div class="bg-slate-100 flex flex-col space-y-2 p-4 mx-4 rounded-lg">
+          <div class="flex flex-row pb-2">
+            <input type="number" id="snd-input" class="bg-transparent font-semibold py-2 rounded mr-4 focus:outline-none" />
+            <select id="sndToken" class="bg-white rounded-full p-2 focus:outline-none">
+              <option value="" class="text-center" selected>---</option>
+            </select>
+          </div>
+          <p id="snd-est" class="text-slate">est value</p>
+        </div>
+        <div class="pt-4">
+          <label for="input-amount" class="text-white font-semibold text-left text-lg mx-4">You will receive...</label>
+        </div>
+        <div class="bg-slate-100 flex flex-col space-y-2 p-4 mx-4 rounded-lg">
+          <div class="flex flex-row pb-2">
+            <input type="number" id="rcv-output" class="bg-transparent font-semibold py-2 rounded mr-4 focus:outline-none" />
+            <select id="rcvToken" class="bg-white rounded-full p-2 focus:outline-none">
+              <option value="" class="text-center" disabled selected>---</option>
+            </select>
+          </div>
+          <p id="rcv-est" class="text-slate">est value</p>
+        </div>
+        <div class="pt-6 pb-2 text-center">
+          <button type="submit" class="bg-pink-200 text-amber-950 font-bold px-6 py-3 rounded-full hover:bg-pink-100">
+            CONFIRM SWAP
+          </button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+  </div>
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
+  
 </body>
 
 </html>
